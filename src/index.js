@@ -2,18 +2,13 @@ import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import style from './style.css';
+// class foo extends Component(props) {
+//   constructor(props) {
+//     super();
+//   }
+// }
 
-class index extends Component {
-  render() {
-    return (
-      <div>
-        123
-      </div>
-    );
-  }
-}
-
-function indexFunc() {
+const indexFunc = () => {
   return (
     <Fragment>
       <header>This is the header</header>
@@ -35,5 +30,7 @@ function indexFunc() {
     </Fragment>
   );
 }
+
+new Promise(resolve => console.log('promise'));
 
 ReactDOM.render(indexFunc(), document.getElementById('root'));
