@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import style from './style.css';
+import style from '@styles/style.css';
 
 class content extends Component {
   render() {
