@@ -1,28 +1,36 @@
 import React, { Component, Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
-import Content from '@pages/content';
 import Home from '@pages/home';
 import About from '@pages/about';
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
-// import UseDocumentTitle from '@components/UseDocumentTitle';
+import Content from '@pages/content';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css';
-
-import { Segment, Placeholder } from 'semantic-ui-react';
-
 import TopMenu from '@components/TopMenu';
-import PlaceHolderCard from '@components/PlaceHolder/Card';
+
 function IndexFunc() {
   const [ activeItem, setActiveItem ] = useState('home');
-  console.log('activeItem :', activeItem);
 
   return (
     <Router>
+      {/* <TopMenu activeItem={activeItem} /> */}
       <div>
-        <TopMenu />
-        <Route path="/home" component={Home} />
-        <Route path="/content" component={Content} />
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/content">Content</Link>
+          </li>
+        </ul>
+        <hr />
+        <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
+        <Route path="/content" component={Content} />
       </div>
+      
     </Router>
   );
 }

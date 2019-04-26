@@ -12,7 +12,9 @@ module.exports = merge(common, {
   devServer: {
     contentBase: './dist',
     compress: true,
-    hot: true
+    hot: true,
+    // 使用BrowserRouter刷新报404，如果找不到页面就返回首页
+    historyApiFallback: true,
   },
  /*  module: {
     rules: [

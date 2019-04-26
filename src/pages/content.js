@@ -6,7 +6,7 @@ class content extends Component {
   render() {
     return (
       <Fragment>
-        <PlaceHolderArticle />
+        {/* <PlaceHolderArticle /> */}
         <header>This is the header</header>
         <div className={style.hello}>
           <main>
