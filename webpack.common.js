@@ -51,6 +51,7 @@ const config = {
       title: '管理输出',
       inject: true,
       template: './public/index.html',
+      favicon: './public/favicon.ico'
     }),
     new ExtractTextPlugin("styles.css"),
 
@@ -58,6 +59,7 @@ const config = {
   resolve: {
     alias: {
       "@": path.resolve(__dirname, './src/'),
+      "@pages": path.resolve(__dirname, './src/pages'),
       "@components": path.resolve(__dirname, './src/components/'),
       "@styles": path.resolve(__dirname, './src/styles'),
       "@model": path.resolve(__dirname, './src/model'),

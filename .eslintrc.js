@@ -1,6 +1,7 @@
 module.exports = {
-  // root: true,
   // extends: "airbnb",
+  // extends: 'standard',
+  root: true,
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 6,
@@ -9,7 +10,6 @@ module.exports = {
   env: {
     browser: true,
   },
-  // extends: 'standard',
   plugins: [
     'react'
   ],

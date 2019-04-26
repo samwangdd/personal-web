@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react';
+import moduleName from '@components/PlaceHolder/Article';
 import style from '@styles/style.css';
 
 class content extends Component {
   render() {
     return (
       <Fragment>
+        <PlaceHolderArticle />
         <header>This is the header</header>
         <div className={style.hello}>
           <main>

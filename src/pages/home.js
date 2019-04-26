@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function useDocumentTitle(title) {
+  // 类似 componentDidMount 和 componentDidUpdate
   useEffect(
     () => {
       document.title = title;
@@ -11,14 +12,10 @@ function useDocumentTitle(title) {
 }
 
 // hooks写法
-function test() {
+function Home() {
   const [count, setCount] = useState(0);
 
-  // 类似 componentDidMount 和 componentDidUpdate
-  /* useEffect(() => {
-    document.title = `you clicked ${count} times`;
-  }) */
-  useDocumentTitle('个人中心');
+  useDocumentTitle(`you clicked ${count} times`);
   
   return (
     <div>
@@ -28,7 +25,7 @@ function test() {
   )
 }
 
-export default test;
+export default Home;
 
 // 类组件写法
 /* class test extends Component {

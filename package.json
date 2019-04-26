@@ -9,14 +9,19 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "lodash": "^4.17.11",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.86.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack-cli --config webpack.prod.js",
-    "watch": "webpack-cli --watch",
-    "serve": "cd dist && serve ."
+    "start": "cross-env webpack-dev-server --open --config webpack.dev.js",
+    "build": "cross-env webpack-cli --config webpack.prod.js",
+    "watch": "cross-env webpack-cli --watch",
+    "serve": "cross-env cd dist && serve ."
   },
   "devDependencies": {
     "babel-core": "6",
@@ -26,8 +31,8 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^1.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
