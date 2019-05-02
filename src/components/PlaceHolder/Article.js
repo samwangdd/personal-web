@@ -1,5 +1,5 @@
-import React from 'react'
-import { Placeholder } from 'semantic-ui-react'
+// import React from 'react'
+// import { Placeholder } from 'semantic-ui-react'
 
 const PlaceholderArticle = () => (
   <Placeholder>
@@ -18,4 +18,4 @@ const PlaceholderArticle = () => (
   </Placeholder>
 )
 
-export default PlaceholderArticle
+export default PlaceholderArticle;

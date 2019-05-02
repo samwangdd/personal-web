@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import moduleName from '@components/PlaceHolder/Article';
+// import moduleName from '@components/PlaceHolder/Article';
 import style from '@styles/style.css';
 
 class content extends Component {
-  render() {
+  render () {
     return (
       <Fragment>
         {/* <PlaceHolderArticle /> */}

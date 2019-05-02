@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class about extends Component {
-  render() {
+  render () {
     return (
       <div>
         about me

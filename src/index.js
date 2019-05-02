@@ -1,18 +1,14 @@
-import React, { Component, Fragment, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from '@pages/home';
 import About from '@pages/about';
 import Content from '@pages/content';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
-import TopMenu from '@components/TopMenu';
 
-function IndexFunc() {
-  const [ activeItem, setActiveItem ] = useState('home');
-
+function IndexFunc () {
   return (
     <Router>
-      {/* <TopMenu activeItem={activeItem} /> */}
       <div>
         <ul>
           <li>
@@ -30,7 +26,6 @@ function IndexFunc() {
         <Route path="/about" component={About} />
         <Route path="/content" component={Content} />
       </div>
-      
     </Router>
   );
 }

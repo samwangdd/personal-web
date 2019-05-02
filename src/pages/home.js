@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
-function useDocumentTitle(title) {
+function useDocumentTitle (title) {
   // 类似 componentDidMount 和 componentDidUpdate
   useEffect(
     () => {
-      document.title = title;
-      return () => (document.title = "前端精读");
+      document.title = title
+      return () => (document.title = '前端精读')
     },
     [title]
   );
 }
 
 // hooks写法
-function Home() {
+function Home () {
   const [count, setCount] = useState(0);
-
   useDocumentTitle(`you clicked ${count} times`);
-  
   return (
     <div>
       <p>you clicked {count}</p>
@@ -31,7 +29,7 @@ export default Home;
 /* class test extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       count: 0
     }
   }
@@ -43,4 +41,4 @@ export default Home;
       </div>
     );
   }
-}*/
+} */
