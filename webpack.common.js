@@ -14,6 +14,14 @@ const config = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "eslint-loader"
+        }
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -41,10 +49,23 @@ const config = {
       title: '管理输出',
       inject: true,
       template: './public/index.html',
+      favicon: './public/favicon.ico'
     }),
     new ExtractTextPlugin("styles.css"),
 
-  ]
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, './src/'),
+      "@pages": path.resolve(__dirname, './src/pages'),
+      "@components": path.resolve(__dirname, './src/components/'),
+      "@styles": path.resolve(__dirname, './src/styles'),
+      "@model": path.resolve(__dirname, './src/model'),
+      "@service": path.resolve(__dirname, './src/services'),
+      "@utils": path.resolve(__dirname, './src/utils'),
+      "@img": path.resolve(__dirname, './src/img'),
+    }
+  }
 };
 
 module.exports = config;

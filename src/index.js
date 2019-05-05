@@ -1,36 +1,33 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import style from './style.css';
-// class foo extends Component(props) {
-//   constructor(props) {
-//     super();
-//   }
-// }
+import Home from '@pages/home';
+import About from '@pages/about';
+import Content from '@pages/content';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css';
 
-const indexFunc = () => {
+function IndexFunc () {
   return (
-    <Fragment>
-      <header>This is the header</header>
-      <div className={style.hello}>
-        <main>
-          <h1>This is the main content.</h1>
-          <p>Someday, sam and his families go to the park, Someday, sam and his families go to the parkSomeday, sam and his families go to the parkSomeday, sam and his families go to the park...</p>
-        </main>
-        <nav>
-          <h4>This is the navigation section.</h4>
-          <p>Someday, sam and his families go to the park, Someday, sam and his families go to the parkSomeday, sam and his families go to the park...</p>
-        </nav>
-        <aside>
-          <h4>This is an aside section.</h4>
-          <p>Someday, sam and his families go to the park, Someday, sam and his families go to the parkSomeday, sam and his families go to the park...</p>
-        </aside>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/content">Content</Link>
+          </li>
+        </ul>
+        <hr />
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/content" component={Content} />
       </div>
-      <footer>This is the footer.</footer>
-    </Fragment>
+    </Router>
   );
 }
 
-new Promise(resolve => console.log('promise'));
-
-ReactDOM.render(indexFunc(), document.getElementById('root'));
+ReactDOM.render(<IndexFunc />, document.getElementById('root'));
