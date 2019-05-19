@@ -1,10 +1,8 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const localPath = require("./config/path");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const localPath = require('./config/path');
 
-console.log("localPath :", localPath);
 const config = {
   entry: {
     app: "./src/index.js"
@@ -48,7 +46,6 @@ const config = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
       title: "管理输出",
       inject: true,
