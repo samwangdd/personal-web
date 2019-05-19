@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Segment, Placeholder } from 'semantic-ui-react';
 
 class Card extends Component {
-  render() {
+  render () {
     return (
       <Segment raised>
         <Placeholder>
