@@ -1,27 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css';
+
 import Home from '@pages/home';
 import About from '@pages/about';
 import Content from '@pages/content';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import 'semantic-ui-css/semantic.min.css';
+import TopMenu from '@components/TopMenu';
 
-function IndexFunc () {
+const MenuList = [
+  {
+    name: "Home",
+    path: "/"
+  },
+  {
+    name: "Content",
+    path: "/content"
+  },
+  {
+    name: "About",
+    path: "/about"
+  }
+];
+
+function IndexFunc() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/content">Content</Link>
-          </li>
-        </ul>
-        <hr />
+        <TopMenu list={MenuList} />
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/content" component={Content} />

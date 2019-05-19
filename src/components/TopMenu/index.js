@@ -1,33 +1,29 @@
-import React, { useState } from 'react';
-import { Menu } from 'semantic-ui-react';
+import React, { useState } from "react";
+import { Menu, MenuItem } from "semantic-ui-react";
+import { Link, withRouter } from "react-router-dom";
 
+// import { getUrlParams } from "@utils/index";
 function TopMenu(params) {
-  const [ activeItem, setActiveItem ] = useState('home');
+  const { list, location } = params;
+  const { pathname } = location;
+  const [activeItem, setActiveItem] = useState(pathname);
 
-  return(
+  return (
     <Menu pointing secondary>
       <Menu.Menu position="right">
-        <Menu.Item
-          name="home"
-          active={activeItem === "home"}
-          onClick={() => setActiveItem('home')}
-        >
-        </Menu.Item>
-        <Menu.Item
-          name="content"
-          active={activeItem === "content"}
-          onClick={() => setActiveItem('content')}
-        >
-        </Menu.Item>
-        <Menu.Item
-          name="about"
-          active={activeItem === "about"}
-          onClick={() => setActiveItem('about')}
-        >
-        </Menu.Item>
+        {list.map(item => (
+          <MenuItem
+            key={item.key}
+            name={item.key}
+            active={activeItem === item.path}
+            onClick={() => setActiveItem(item.path)}
+          >
+            <Link to={item.path}>{item.name}</Link>
+          </MenuItem>
+        ))}
       </Menu.Menu>
     </Menu>
-  )
+  );
 }
 
-export default TopMenu;
+export default withRouter(TopMenu);

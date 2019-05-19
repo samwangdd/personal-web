@@ -1,15 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const localPath = require('./config/path');
+// const localPath = require('./config/path');
 
 const config = {
-  entry:  {
-    app: './src/index.js',
+  entry: {
+    app: "./src/index.js"
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -25,7 +25,7 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader"
         }
       },
       {
@@ -34,36 +34,36 @@ const config = {
           fallback: "style-loader",
           use: "css-loader"
         })
-      }, {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
-      }, {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"]
+      }
     ]
   },
   plugins: [
-    
     new HtmlWebpackPlugin({
-      title: '管理输出',
+      title: "管理输出",
       inject: true,
-      template: './public/index.html',
-      favicon: './public/favicon.ico'
+      template: "./public/index.html",
+      favicon: "./public/favicon.ico"
     }),
-    new ExtractTextPlugin("styles.css"),
-
+    new ExtractTextPlugin("styles.css")
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, './src/'),
-      "@pages": path.resolve(__dirname, './src/pages'),
-      "@components": path.resolve(__dirname, './src/components/'),
-      "@styles": path.resolve(__dirname, './src/styles'),
-      "@model": path.resolve(__dirname, './src/model'),
-      "@service": path.resolve(__dirname, './src/services'),
-      "@utils": path.resolve(__dirname, './src/utils'),
-      "@img": path.resolve(__dirname, './src/img'),
+      "@": path.resolve(__dirname, "./src/"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@components": path.resolve(__dirname, "./src/components/"),
+      "@styles": path.resolve(__dirname, "./src/styles"),
+      "@model": path.resolve(__dirname, "./src/model"),
+      "@service": path.resolve(__dirname, "./src/services"),
+      "@utils": path.resolve(__dirname, "./utils"),
+      "@img": path.resolve(__dirname, "./src/img")
     }
   }
 };
