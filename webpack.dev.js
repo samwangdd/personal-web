@@ -1,8 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = merge(common, {
@@ -14,9 +12,9 @@ module.exports = merge(common, {
     compress: true,
     hot: true,
     // 使用BrowserRouter刷新报404，如果找不到页面就返回首页
-    historyApiFallback: true,
+    historyApiFallback: true
   },
- /*  module: {
+  /*  module: {
     rules: [
       {
         test: /\.css$/,
@@ -32,6 +30,6 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    }),
+    })
   ]
 })

@@ -63,7 +63,7 @@ const config = {
       "@model": path.resolve(__dirname, "./src/model"),
       "@service": path.resolve(__dirname, "./src/services"),
       "@utils": path.resolve(__dirname, "./utils"),
-      "@img": path.resolve(__dirname, "./src/img")
+      "@images": path.resolve(__dirname, "./src/images")
     }
   }
 };
