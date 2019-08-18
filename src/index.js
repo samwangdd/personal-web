@@ -3,24 +3,24 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 
-import Home from '@pages/home';
+import Home from '@pages/home.tsx';
 import About from '@pages/about';
-import Content from '@pages/content';
+import Content from '@pages/content.tsx';
 import TopMenu from '@components/TopMenu';
 
 const MenuList = [
   {
-    name: "Home",
-    path: "/"
+    name: 'Home',
+    path: '/',
   },
   {
-    name: "Content",
-    path: "/content"
+    name: 'Content',
+    path: '/content',
   },
   {
-    name: "About",
-    path: "/about"
-  }
+    name: 'About',
+    path: '/about',
+  },
 ];
 
 function IndexFunc() {

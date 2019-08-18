@@ -15,7 +15,8 @@ module.exports = {
     "browser": true,
   },
   "plugins": [
-    'react'
+    'react',
+    'react-hooks'
   ],
   "rules": {
     "semi": 0,
@@ -23,6 +24,9 @@ module.exports = {
     "comma-dangle": 0,
     "space-before-function-paren": 0,
     "react/jsx-uses-vars": 2,
-    "react/jsx-uses-react": 2
+    "react/jsx-uses-react": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+
   }
 };
