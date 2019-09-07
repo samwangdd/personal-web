@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import styles from '@styles/style.css';
 
 const initialState = { count: 0 };
 
@@ -9,17 +10,17 @@ function reducer(state, action) {
     case 'decrement':
       return { count: state.count - 1 };
     case 'reset':
-      return { count: 0 };
+      return initialState;
     default:
       throw new Error();
   }
 }
+
 // hooks写法
 function Home() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   return (
-    <div>
+    <div className={styles.hello}>
       <p>you clicked {state.count} times</p>
       <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
       <button onClick={() => dispatch({ type: 'incremet' })}>+</button>

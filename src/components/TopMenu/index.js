@@ -1,28 +1,34 @@
-import React, { useState } from "react";
-import { Menu, MenuItem } from "semantic-ui-react";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Segment, Menu, MenuItem } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
 
-// import { getUrlParams } from "@utils/index";
+// import { logo } from '@images/index';
+
 function TopMenu(params) {
-  const { list, location } = params;
+  const { list, location, history } = params;
   const { pathname } = location;
   const [activeItem, setActiveItem] = useState(pathname);
 
+  useEffect(() => {
+    history.push(`${activeItem}`);
+  }, [history, activeItem]);
+
   return (
-    <Menu pointing secondary>
-      <Menu.Menu position="right">
+    <Segment inverted>
+      <Menu inverted pointing secondary>
+        <Menu.Item>
+          <img alt="logo" src="../../images/Logo.png" />
+        </Menu.Item>
         {list.map(item => (
           <MenuItem
-            key={item.key}
-            name={item.key}
+            key={item.name}
+            name={item.name}
             active={activeItem === item.path}
             onClick={() => setActiveItem(item.path)}
-          >
-            <Link to={item.path}>{item.name}</Link>
-          </MenuItem>
+          />
         ))}
-      </Menu.Menu>
-    </Menu>
+      </Menu>
+    </Segment>
   );
 }
 
