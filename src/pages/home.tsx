@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import styles from '@styles/style.css';
 
 /* ---- interface ---- */
 interface IState {
@@ -18,18 +19,18 @@ function reducer(state, action) {
     case 'decrement':
       return { count: state.count - 1 };
     case 'reset':
-      return { count: 0 };
+      return initialState;
     default:
       throw new Error();
   }
 }
+
 // hooks写法
 const Home: React.FC<IHome> = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   return (
-    <div>
-      <p>you clicked {state.count} time</p>
+    <div className={styles.hello}>
+      <p>you clicked {state.count} times</p>
       <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
       <button onClick={() => dispatch({ type: 'incremet' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>

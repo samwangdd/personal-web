@@ -14,17 +14,6 @@ module.exports = merge(common, {
     // 使用BrowserRouter刷新报404，如果找不到页面就返回首页
     historyApiFallback: true
   },
-  /*  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
-      },
-    ]
-  }, */
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
