@@ -1,7 +1,16 @@
 import React, { useReducer } from 'react';
 import styles from '@styles/style.css';
 
-const initialState = { count: 0 };
+/* ---- interface ---- */
+interface IState {
+  count: number;
+}
+
+interface IHome {
+
+}
+
+const initialState: IState = { count: 0 };
 
 function reducer(state, action) {
   switch (action.type) {
@@ -17,7 +26,7 @@ function reducer(state, action) {
 }
 
 // hooks写法
-function Home() {
+const Home: React.FC<IHome> = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div className={styles.hello}>
@@ -27,6 +36,6 @@ function Home() {
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
     </div>
   );
-}
+};
 
 export default Home;

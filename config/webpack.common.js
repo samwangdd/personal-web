@@ -26,13 +26,13 @@ const config = {
         },
       },
       {
-        test: /\.js$/,
-        include: [resolve('src')],
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
       },
+      { test: /\.(ts|tsx)?$/, loader: 'ts-loader' },
       // TODO处理css的写法过于冗余
       // 参考：https://juejin.im/post/5b195fcde51d4506b62cb0d3#comment
       {
