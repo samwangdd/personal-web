@@ -1,4 +1,28 @@
-.hello {
-  color: red;
-  /* background: url('./save.png'); */
+.wrapper {
+  padding: 0 200px 0 300px;
+}
+
+.col {
+  height: 100px;
+  float: left;
+  position: relative;
+}
+
+.center {
+  width: 100%;
+  background: lightcoral;
+}
+
+.left {
+  width: 300px;
+  background: lightgreen;
+  margin-left: -100%;
+  left: -300px;
+}
+
+.right {
+  width: 200px;
+  background: lightseagreen;
+  margin-left: -200px;
+  right: -200px;
 }

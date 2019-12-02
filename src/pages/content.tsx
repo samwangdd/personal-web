@@ -6,7 +6,11 @@ import style from '@styles/content.css';
 
 interface IContentProps {}
 
-const AppContext = React.createContext({});
+interface IACProps {
+  [propName: string]: any;
+}
+
+const AppContext: any = React.createContext({});
 
 const NavBar = () => {
   const { userName } = useContext(AppContext);

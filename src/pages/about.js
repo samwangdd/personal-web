@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import Mouse from '@components/RenderProps/Mouse';
+// import Mouse from '@components/RenderProps/Mouse';
 // import { Cat } from '@components/RenderProps/MouseWithCat';
 import MouseTraker from '@components/RenderProps/MouseTraker';
+import styles from '@styles/style.css';
 
 class about extends Component {
   renderCat = mouse => {
@@ -10,17 +11,11 @@ class about extends Component {
     return <MouseTraker mouse={mouse} />;
   };
   render() {
-    console.log('about :');
     return (
-      <div style={{ height: '1000px' }}>
-        about me
-        <h1>移动鼠标！</h1>
-        <Mouse
-          render={mouse => {
-            console.log('linerender :');
-            return <MouseTraker mouse={mouse} />;
-          }}
-        />
+      <div className={styles.wrapper}>
+        <div className={`${styles.center} ${styles.col}`}>2</div>
+        <div className={`${styles.left} ${styles.col}`}>1</div>
+        <div className={`${styles.right} ${styles.col}`}>3</div>
       </div>
     );
   }
