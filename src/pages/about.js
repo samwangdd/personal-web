@@ -13,9 +13,11 @@ class about extends Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <div className={`${styles.center} ${styles.col}`}>2</div>
+        {/* <div className={`${styles.center} ${styles.col}`}>2</div>
         <div className={`${styles.left} ${styles.col}`}>1</div>
-        <div className={`${styles.right} ${styles.col}`}>3</div>
+        <div className={`${styles.right} ${styles.col}`}>3</div> */}
+        <div className={styles.header}>Header</div>
+        <div className={styles.footer}>Footer</div>
       </div>
     );
   }

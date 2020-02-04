@@ -1,5 +1,18 @@
+
 .wrapper {
-  padding: 0 200px 0 300px;
+  /* padding: 0 200px 0 300px; */
+  min-height: calc(100%);
+}
+
+.header {
+  /* min-height: calc(100% - 86px); */
+  height: 100%;
+  background: lightblue;
+}
+
+.footer {
+  height: 100px;
+  background: lightskyblue;
 }
 
 .col {
