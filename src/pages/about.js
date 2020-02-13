@@ -5,6 +5,9 @@ import React, { Component } from 'react';
 import MouseTraker from '@components/RenderProps/MouseTraker';
 import styles from '@styles/style.css';
 
+import Tabs from './tabs';
+import RefsButton from './refsButton';
+
 class about extends Component {
   renderCat = mouse => {
     console.log('renderCat :');
@@ -18,6 +21,8 @@ class about extends Component {
         <div className={`${styles.right} ${styles.col}`}>3</div> */}
         <div className={styles.header}>Header</div>
         <div className={styles.footer}>Footer</div>
+        <Tabs />
+        <RefsButton />
       </div>
     );
   }
