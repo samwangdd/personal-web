@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import styles from '@styles/style.css';
 
 /* ---- interface ---- */
@@ -28,12 +28,18 @@ function reducer(state, action) {
 // hooks写法
 const Home: React.FC<IHome> = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [intialVal, setText] = useState('Click me!')
+
+  function handleClick() {
+    setText('ok, you did!')
+  }
   return (
     <div className={styles.hello}>
       <p>you clicked {state.count} times</p>
       <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
       <button onClick={() => dispatch({ type: 'incremet' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <button onClick={() => handleClick()}>{intialVal}</button>
     </div>
   );
 };

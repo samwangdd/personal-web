@@ -1,9 +1,7 @@
 {
-  "presets": [
-    "env",
-    "react",
-  ],
+  "presets": ["env", "react"],
   "plugins": [
+    "transform-decorators-legacy",
     "transform-runtime",
     ["transform-class-properties", { "spec": true }]
   ]
