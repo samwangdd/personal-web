@@ -13,7 +13,8 @@ const RefsHOC = WrappedComponent =>
       console.log('willUnmount : 4');
     }
     proc(wrappedComponentInstance) {
-      // wrappedComponentInstance.method();
+      console.log('wrappedComponentInstance :', wrappedComponentInstance);
+      // wrappedComponentInstance.renderCat();
     }
 
     render() {

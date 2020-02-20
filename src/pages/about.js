@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 // import Mouse from '@components/RenderProps/Mouse';
 // import { Cat } from '@components/RenderProps/MouseWithCat';
-import MouseTraker from '@components/RenderProps/MouseTraker';
-// import RefsHOC from '@components/HOC/RefsHOC.jsx';
-import IIHOC from '@components/HOC/IIHOC.jsx';
+// import MouseTraker from '@components/RenderProps/MouseTraker';
+import RefsHOC from '@components/HOC/RefsHOC.jsx';
+import List from '@components/List.jsx';
+// import IIHOC from '@components/HOC/IIHOC.jsx';
+// import MyInput from '@components/MyInput';
 import styles from '@styles/style.css';
 
 import Tabs from './tabs';
@@ -14,30 +16,30 @@ import RefsButton from './refsButton';
 //   target.isTestable = true;
 // }
 
-@IIHOC
+@RefsHOC
 class about extends Component {
-  componentDidMount() {
-    console.log('didMount : 2');
+  constructor(props) {
+    super(props);
+    this.state = {
+      words: ['marklar', 'lakala', 'babala'],
+    };
   }
 
-  componentWillUnmount() {
-    console.log('willUnmount : 3');
-  }
-
-  renderCat = mouse => {
-    console.log('renderCat :');
-    return <MouseTraker mouse={mouse} />;
+  handleClick = () => {
+    this.setState({
+      words: null,
+    });
   };
+
   render() {
     return (
       <div className={styles.wrapper} authId="111">
-        {/* <div className={`${styles.center} ${styles.col}`}>2</div>
-        <div className={`${styles.left} ${styles.col}`}>1</div>
-        <div className={`${styles.right} ${styles.col}`}>3</div> */}
         <div className={styles.header}>Header</div>
         <div className={styles.footer}>Footer</div>
         <Tabs />
         <RefsButton />
+        <button onClick={this.handleClick}>dada...</button>
+        <List items={this.state.words || []}></List>
       </div>
     );
   }
