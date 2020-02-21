@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import Mouse from '@components/RenderProps/Mouse';
 // import { Cat } from '@components/RenderProps/MouseWithCat';
 // import MouseTraker from '@components/RenderProps/MouseTraker';
-import RefsHOC from '@components/HOC/RefsHOC.jsx';
+// import RefsHOC from '@components/HOC/RefsHOC.jsx';
 import List from '@components/List.jsx';
 // import IIHOC from '@components/HOC/IIHOC.jsx';
 // import MyInput from '@components/MyInput';
@@ -16,22 +16,28 @@ import RefsButton from './refsButton';
 //   target.isTestable = true;
 // }
 
-@RefsHOC
+// @RefsHOC
 class about extends Component {
   constructor(props) {
     super(props);
     this.state = {
       words: ['marklar', 'lakala', 'babala'],
+      list: { name: 'sam' },
     };
   }
 
   handleClick = () => {
+    // const { words } = this.state;
+    // words.pop();
     this.setState({
-      words: null,
+      // words: ['marklar', 'lakala', 'babala'],
+      list: { name: 'sam' },
+      // words,
     });
   };
 
   render() {
+    const { words, list } = this.state;
     return (
       <div className={styles.wrapper} authId="111">
         <div className={styles.header}>Header</div>
@@ -39,7 +45,7 @@ class about extends Component {
         <Tabs />
         <RefsButton />
         <button onClick={this.handleClick}>dada...</button>
-        <List items={this.state.words || []}></List>
+        <List items={words} list={list} />
       </div>
     );
   }
