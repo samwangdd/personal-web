@@ -9,6 +9,7 @@
   "dependencies": {
     "@types/react": "^16.9.5",
     "babel-runtime": "^6.26.0",
+    "immer": "^5.3.6",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "ramda": "^0.26.1",
