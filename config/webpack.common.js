@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');s
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -13,18 +13,9 @@ const config = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '..', 'dist'),
   },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        test: /\.js$/,
-        include: [resolve('src')],
-        exclude: /node_modules/,
-      }),
-    ],
-  },
+
   module: {
     rules: [
       {
@@ -117,11 +108,11 @@ const config = {
       template: './public/index.html',
       favicon: './public/favicon.ico',
     }),
-    // new ExtractTextPlugin('styles.css'),
     new ParallelUglifyPlugin({
       cacheDir: '.cache/',
-      uglifyJS: {
+      uglifyES: {
         output: {
+          beautify: false,
           comments: false,
         },
         warnings: false,
