@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -13,6 +14,16 @@ const config = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js$/,
+        include: [resolve('src')],
+        exclude: /node_modules/,
+      }),
+    ],
   },
   module: {
     rules: [
@@ -30,6 +41,9 @@ const config = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
         },
       },
       { test: /\.(ts|tsx)?$/, loader: 'ts-loader' },
@@ -50,7 +64,7 @@ const config = {
             loader: 'postcss-loader',
             options: {
               // 如果没有options这个选项将会报错 No PostCSS Config found
-              plugins: loader => [
+              plugins: (loader) => [
                 require('postcss-import')({ root: loader.resourcePath }),
                 require('autoprefixer')(), // CSS浏览器兼容
                 require('cssnano')(), // 压缩css
@@ -76,7 +90,7 @@ const config = {
             loader: 'postcss-loader',
             options: {
               // 如果没有options这个选项将会报错 No PostCSS Config found
-              plugins: loader => [
+              plugins: (loader) => [
                 require('postcss-import')({ root: loader.resourcePath }),
                 require('autoprefixer')(), // CSS浏览器兼容
                 require('cssnano')(), // 压缩css
