@@ -1,5 +1,4 @@
 module.exports = {
-  // extends: "airbnb",
   "extends": 'standard',
   "root": true,
   "parser": 'babel-eslint',
@@ -27,6 +26,5 @@ module.exports = {
     "react/jsx-uses-react": 2,
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
-
   }
 };
