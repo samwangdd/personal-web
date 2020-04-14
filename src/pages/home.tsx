@@ -6,9 +6,7 @@ interface IState {
   count: number;
 }
 
-interface IHome {
-
-}
+interface IHome {}
 
 const initialState: IState = { count: 0 };
 
@@ -28,10 +26,10 @@ function reducer(state, action) {
 // hooks写法
 const Home: React.FC<IHome> = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [intialVal, setText] = useState('Click me!')
+  const [intialVal, setText] = useState('Click me!');
 
   function handleClick() {
-    setText('ok, you did!')
+    setText('ok, you did!');
   }
   return (
     <div className={styles.hello}>

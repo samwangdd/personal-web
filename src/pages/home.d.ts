@@ -1,5 +1,4 @@
 import React from 'react';
-interface IHome {
-}
+interface IHome {}
 declare const Home: React.FC<IHome>;
 export default Home;

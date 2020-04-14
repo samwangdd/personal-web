@@ -11,7 +11,7 @@ class RefsButtom extends Component {
   }
 
   componentDidMount() {
-    document.body.addEventListener('click', e => {
+    document.body.addEventListener('click', (e) => {
       if (e.target && e.target.matches('.cat')) return;
       this.setState({ active: false });
     });
@@ -35,12 +35,12 @@ class RefsButtom extends Component {
     }
   };
 
-  handleQr = e => {
+  handleQr = (e) => {
     // e.preventDefault();
     e.stopPropagation();
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
       value: e.target.value,
     });

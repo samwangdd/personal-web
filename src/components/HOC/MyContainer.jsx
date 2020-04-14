@@ -23,7 +23,7 @@ import React, { Component } from 'react';
  * 抽象state
  * @param {ReactNode} WrappedComponent 被包裹组件
  */
-const MyContainer = WrappedComponent =>
+const MyContainer = (WrappedComponent) =>
   class extends Component {
     constructor(props) {
       super(props);
@@ -32,7 +32,7 @@ const MyContainer = WrappedComponent =>
       };
     }
 
-    onHandleChange = e => {
+    onHandleChange = (e) => {
       const val = e.target.value;
       this.setState({
         name: val,
