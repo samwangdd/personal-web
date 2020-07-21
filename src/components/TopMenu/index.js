@@ -30,7 +30,7 @@ function TopMenu(params) {
         <Menu.Item>
           <img alt="logo" src="../../images/Logo.png" />
         </Menu.Item>
-        {list.map(item => (
+        {list.map((item) => (
           <MenuItem
             key={item.name}
             name={item.name}

@@ -48,7 +48,7 @@
 
 // 计算发表的时间: 分钟/小时以前...
 // 通过if/else条件判断
-function getStamp(date) {
+export function getStamp(date) {
   const now = new Date().getTime();
   const jetLag = now - date;
   // 秒
@@ -99,11 +99,11 @@ console.log('getPublishTime :', getPublishTime(1575381436012));
  *
  */
 // eslint-disable-next-line no-extend-native
-Function.prototype.binded = function(context) {
+Function.prototype.binded = function (context) {
   const self = this;
   // 接收bind时，传入的参数
   const args = Array.prototype.slice.call(arguments, 1);
-  return function() {
+  return function () {
     var bindArgs = Array.prototype.slice.call(arguments);
     return self.apply(context, args.concat(bindArgs));
   };

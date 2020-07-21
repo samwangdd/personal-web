@@ -3,7 +3,7 @@
 /**
  * 反向继承HOC
  */
-const IIHOC = WarppedComponent =>
+const IIHOC = (WarppedComponent) =>
   class extends WarppedComponent {
     render() {
       console.log('this.props :', this.props);

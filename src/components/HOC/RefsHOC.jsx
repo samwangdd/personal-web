@@ -3,7 +3,7 @@ import React, { Component } from 'react';
  * 通过refs使用引用
  * @param {ReactNode} WrappedComponent 被包裹的组件
  */
-const RefsHOC = WrappedComponent =>
+const RefsHOC = (WrappedComponent) =>
   class extends Component {
     componentDidMount() {
       console.log('didMount : 1');

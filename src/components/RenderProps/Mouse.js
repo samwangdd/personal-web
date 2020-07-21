@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 class Mouse extends PureComponent {
   state = { x: 0, y: 0 };
 
-  handleMouseMove = event => {
+  handleMouseMove = (event) => {
     // console.log('this :', this);
     this.setState({
       x: event.clientX,

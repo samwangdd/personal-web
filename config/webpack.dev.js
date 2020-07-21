@@ -11,13 +11,13 @@ module.exports = merge(common, {
     compress: true,
     hot: true,
     // 使用BrowserRouter刷新报404，如果找不到页面就返回首页
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
-  ]
-})
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
+  ],
+});

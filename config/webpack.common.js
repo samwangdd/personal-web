@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 // const TerserPlugin = require('terser-webpack-plugin');s
+const BasicPlugin = require('../plugin/BasicPlugin');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -118,6 +119,7 @@ const config = {
         warnings: false,
       },
     }),
+    new BasicPlugin({ title: '自定义插件' }),
   ],
   resolve: {
     extensions: ['.js', '.json'],
