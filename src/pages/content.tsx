@@ -6,10 +6,6 @@ import style from '@styles/content.css';
 
 interface IContentProps {}
 
-interface IACProps {
-  [propName: string]: any;
-}
-
 const AppContext: any = React.createContext({});
 
 const NavBar = () => {
@@ -34,6 +30,28 @@ const Content: React.SFC<IContentProps> = () => {
               the park...
             </p>
           </main>
+          <div className={style.clearfix}>
+            <div style={{ float: 'left' }}>
+              <img
+                src="https://cdn2.ettoday.net/images/1083/d1083997.jpg"
+                alt="cover"
+                style={{ height: 300, width: 500 }}
+              />
+            </div>
+            <p>
+              Someday, sam and his families go to the park, Someday, sam and his families go to the
+              parkSomeday, sam and his families go to the parkSomeday, sam and his families go to
+              the park...
+            </p>
+            <p>
+              Someday, sam and his families go to the park, Someday, sam and his families go to the
+              parkSomeday, sam and his families go to the parkSomeday, sam and his families go to
+              the park...
+            </p>
+
+            {/* <div style={{ clear: 'both' }}></div> */}
+          </div>
+
           <nav>
             <h4>This is the navigation section.</h4>
             <p>

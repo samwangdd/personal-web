@@ -2,3 +2,9 @@
   color: goldenrod;
   /* background: url('./save.png'); */
 }
+.clearfix::after {
+  content: '003';
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
